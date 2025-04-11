@@ -63,7 +63,7 @@ The context also suggests being organized by getting all your ingredients and co
 Your question: 
 ```
 
-now we can type "exit" to close this chatbot
+now we can type "exit" to close this chatbot: 
 
 ```bash
 Your question: exit
