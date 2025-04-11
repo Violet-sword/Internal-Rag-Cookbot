@@ -42,8 +42,16 @@ Ask questions about cooking hacks and kitchen tips.
 This assistant is powered by a local language model and a custom knowledge base built from community-sourced cooking advice.
 Type 'exit' to quit.
 
-Your question: i am trying to bake some chocolate chip cookies, any tips?
+Your question:
+```
 
+Here we enter our question:
+```bash
+Your question: i am trying to bake some chocolate chip cookies, any tips?
+```
+
+The answer printed out is:
+```bash
 Answer: Based on the provided context, here's a tip for your chocolate chip cookies:
 
 **Brown the butter!** The speaker's wife browns the butter before adding it to the dough, and he says they're the best cookies he's ever had.
@@ -52,6 +60,12 @@ Answer: Based on the provided context, here's a tip for your chocolate chip cook
 
 The context also suggests being organized by getting all your ingredients and containers ready beforehand. 
 
+Your question: 
+```
+
+now we can type "exit" to close this chatbot
+
+```bash
 Your question: exit
 Goodbye!
 ```
