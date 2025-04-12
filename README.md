@@ -47,7 +47,7 @@ This project uses Retrieval-Augmented Generation (RAG), which combines a embeddi
 
 - When you ask a question, it is also embedded into a vector on the spot for the LLM model to actully understand your question.
 
-- FAISS compares this vector to the ones in the vector database and returns the top matching text chunks, there is a specific phrase we use to call it - **top-k**.
+- FAISS compares this vector to the ones in the vector database and returns the top matching text chunks, and the specific phrase we use is **"top-k"**.
 
 - **top-k** is the number of top matching entries we retrieve from the embedding. If the number is too small, we might miss out on some relevant information; if it's too large, we're likely getting too much unrelated content. In the code provided we are using **"top-k 3"**, which is a recommended good default option.
 
