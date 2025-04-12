@@ -33,7 +33,7 @@ This project uses Retrieval-Augmented Generation (RAG), which combines a embeddi
 
 - The text file (cooking-tips-comments.txt) is our knowledge base file.
 
-- The contents of the file is converted into a **High-Dimensional Embedding Vector** using a local model (in the code provided, we used 'snowflake-arctic-embed:335m' from Ollama).
+- The contents of the file is converted by projecting the **high-dimensional space of initial data vectors** into a **lower-dimensional space** using a local embedding model (in the code provided, we used 'snowflake-arctic-embed:335m' from Ollama).
 
 - These vectors capture the semantic meaning of the text — two similar tips will have similar embeddings. 
 
