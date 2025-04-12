@@ -6,7 +6,7 @@ This version is trained on community-sourced cooking tips, but you can customize
 
 ## Features
 
-- Fully local RAG setup
+- Fully local RAG setup (no need for cloud api)
 - Uses Ollama-compatible models for both embedding and generation
 - Built with Python, using LangChain and FAISS library
 - Interactive terminal interface
