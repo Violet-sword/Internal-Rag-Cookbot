@@ -27,15 +27,15 @@ Check if the knowledge base file is in the same directory as "internal-rag-cookb
 
 ## How It Works
 
-This project uses Retrieval-Augmented Generation (RAG), which combines a vector database of your content with a language model to answer questions more accurately and contextually.
+This project uses Retrieval-Augmented Generation (RAG), which combines a embedding vector database created from your content, along with a language model to answer questions more accurately and contextually.
 
 ### Embedding the Content
 
 - The text file (cooking-tips-comments.txt) is our knowledge base file.
 
-- The contents of the file is converted into a high-dimensional embedding vector using a local model (in the code provided, we used 'snowflake-arctic-embed:335m' from Ollama).
+- The contents of the file is converted into a **High-Dimensional Embedding Vector** using a local model (in the code provided, we used 'snowflake-arctic-embed:335m' from Ollama).
 
-- These vectors capture the semantic meaning of the text — two similar tips will have similar embeddings.
+- These vectors capture the semantic meaning of the text — two similar tips will have similar embeddings. 
 
 ### Storing in a Vector Database
 
