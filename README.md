@@ -6,9 +6,9 @@ This version is trained on community-sourced cooking tips, but you can customize
 
 ## Features
 
-- Fully local RAG setup (no cloud APIs!)
+- Fully local RAG setup
 - Uses Ollama-compatible models for both embedding and generation
-- Built with LangChain, FAISS, and Python
+- Built with Python, using LangChain and FAISS library
 - Interactive terminal interface
 - Fallback to general knowledge if answer isn’t found in local data
 
@@ -16,7 +16,7 @@ This version is trained on community-sourced cooking tips, but you can customize
 
 - Python 3.11+
 - [Ollama](https://ollama.com) installed and running
-- pull LLM model and Embedding model from Ollama (change line 18 and 22 of the code accordingly)
+- pull LLM model and Embedding model from Ollama to local (after pulling, change line 18 and 22 of the code accordingly)
 
 Install Python library dependencies:
 ```bash
@@ -24,6 +24,34 @@ pip install langchain langchain-community langchain-ollama faiss-cpu
 ```
 
 Check if the knowledge base file is in the same directory as "internal-rag-cookbot.py". I have named mine "cooking-tips-comments.txt", the name and contents of the file can be changed. 
+
+## How It Works
+
+This project uses Retrieval-Augmented Generation (RAG), which combines a vector database of your content with a language model to answer questions more accurately and contextually.
+
+### Embedding the Content
+
+- The text file (cooking-tips-comments.txt) is our knowledge base file.
+
+- The contents of the file is converted into a high-dimensional embedding vector using a local model (in the code provided, we used 'snowflake-arctic-embed:335m' from Ollama).
+
+- These vectors capture the semantic meaning of the text — two similar tips will have similar embeddings.
+
+### Storing in a Vector Database
+
+- The vectors are stored in FAISS, a fast, in-memory vector store that supports efficient similarity search.
+
+- This lets the system quickly find the most relevant chunks of text when a new question is asked.
+
+### Retrieving and Generating Answers
+
+- When you ask a question, it is also embedded into a vector on the spot for the LLM model to actully understand your question.
+
+- FAISS compares this vector to the ones in the vector database and returns the top matching text chunks.
+
+- These chunks are passed to the LLM (in the provided code we used 'gemma3:12b') along with your question.
+
+- The LLM uses this context to generate a more accurate, grounded, and helpful response.
 
 ## Usage
 
@@ -50,7 +78,7 @@ Here we enter our question:
 Your question: i am trying to bake some chocolate chip cookies, any tips?
 ```
 
-The answer printed out is:
+The answer responded is:
 ```bash
 Answer: Based on the provided context, here's a tip for your chocolate chip cookies:
 
