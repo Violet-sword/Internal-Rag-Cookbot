@@ -31,7 +31,7 @@ def ask_question_with_fallback(query):
     context = "\n\n".join([doc.page_content for doc in docs])
 
     rag_prompt = f"""
-    Use the following context to answer the question:
+    Use the following context to answer the question, but in case that the context does not help, answer 'i don't know':
     
     Context:
     {context}
@@ -48,7 +48,7 @@ def ask_question_with_fallback(query):
 
 # General knowledge fallback
 def use_general_knowledge(query):
-    general_prompt = f"Answer using general knowledge: {query}"
+    general_prompt = f"Please mention that you are answering with general knowledge at the begining of your answer for this question: {query}"
     general_answer = llm.invoke(general_prompt)
     return {"answer": general_answer}
 
