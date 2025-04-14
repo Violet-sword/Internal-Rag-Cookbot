@@ -16,7 +16,7 @@ This version is trained on community-sourced cooking tips, but you can customize
 
 - Python 3.11+
 - [Ollama](https://ollama.com) installed and running
-- pull LLM model and Embedding model from Ollama to local (after pulling, change line 18 and 22 of the code accordingly)
+- pull LLM model and Embedding model from Ollama to local (after pulling, update line 18 and 22 of the code accordingly)
 
 Install Python library dependencies:
 ```bash
@@ -93,7 +93,7 @@ The context also suggests being organized by getting all your ingredients and co
 Your question: 
 ```
 
-now we can type "exit" to close this chatbot: 
+Now we can type "exit" to close this chatbot: 
 
 ```bash
 Your question: exit
